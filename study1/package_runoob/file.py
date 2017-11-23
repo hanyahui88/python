@@ -18,7 +18,10 @@ import os
 # object1.close()
 
 # os.mkdir('e:\\haha')
-os.chdir("E:\\")
-print os.getcwd()
+# os.chdir("E:\\")
+# print(os.getcwd())
 
-os.rmdir("haha")
+# os.rmdir("haha")
+
+files = os.listdir("/home/alvin")
+print(files)

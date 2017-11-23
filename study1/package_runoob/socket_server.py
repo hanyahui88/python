@@ -1,15 +1,23 @@
 # -*- coding: UTF-8 -*-
 import socket
+import sys
 
-s = socket.socket()
-host = socket.gethostname()
-port = 12345
-s.bind((host, port))
+# 创建socket对象
+serversocker = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-s.listen(5)
+# 获取本地主机名
+hostname = socket.gethostname()
+port = 9999
+
+# 绑定端口
+serversocker.bind((hostname, port))
+
+# 设置最大的连接数
+serversocker.listen(5)
 
 while True:
-    c, addr = s.accept()
-    print '连接地址', addr
-    c.send('hello world')
-    c.close()
+    # 建立客户端链接
+    clientsocket, addr = serversocker.accept()
+    print("链接地址：%s", str(addr))
+    clientsocket.send("欢迎访问菜鸟".encode())
+    clientsocket.close()
