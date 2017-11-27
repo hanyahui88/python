@@ -59,8 +59,8 @@ def writeFile(list):
             file.write('\n\n')
             if i == 10:
                 return
-    except IOError, ex:
-        print ex
+    except IOError:
+        print("io error")
     finally:
         file.close()
 

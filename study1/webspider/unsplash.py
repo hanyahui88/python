@@ -12,7 +12,7 @@ https://unsplash.com/图片爬取
 def getPic():
     target = "https://unsplash.com/"
     html = requests.get(target)
-    print html.text
+    print(html.text)
 
 
 getPic()

@@ -5,7 +5,7 @@ class Networkerror(RuntimeError):
 
 try:
     raise Networkerror("Bad hostname")
-except Networkerror, e:
-    print e.args
+except Networkerror:
+    print(" net worker error")
 
-print Networkerror.__doc__
+print(Networkerror.__doc__)

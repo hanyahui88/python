@@ -27,9 +27,9 @@ def sendMail():
         smtpObj.connect(mail_host, 25)
         smtpObj.login(mail_user, mail_pass)
         smtpObj.sendmail(sender, receivers, message.as_string())
-        print "邮件发送成功"
-    except smtplib.SMTPException, ex:
-        print "Error: 无法发送邮件"
+        print("邮件发送成功")
+    except smtplib.SMTPException:
+        print("Error: 无法发送邮件")
 
 
 def sendHTMLMail():
@@ -53,9 +53,9 @@ def sendHTMLMail():
         smtpObj.connect(mail_host, 25)
         smtpObj.login(mail_user, mail_pass)
         smtpObj.sendmail(sender, receivers, message.as_string())
-        print "邮件发送成功"
-    except smtplib.SMTPException, ex:
-        print "Error: 无法发送邮件"
+        print("邮件发送成功")
+    except smtplib.SMTPException:
+        print("Error: 无法发送邮件")
 
 
 def sendAttachFile():
@@ -91,9 +91,9 @@ def sendAttachFile():
         smtpObj.connect(mail_host, 25)
         smtpObj.login(mail_user, mail_pass)
         smtpObj.sendmail(sender, receivers, message.as_string())
-        print "邮件发送成功"
-    except smtplib.SMTPException, ex:
-        print "Error: 无法发送邮件"
+        print("邮件发送成功")
+    except smtplib.SMTPException:
+        print("Error: 无法发送邮件")
 
 
 def sendHTMLImage():
@@ -132,9 +132,9 @@ def sendHTMLImage():
         smtpObj.connect(mail_host, 25)
         smtpObj.login(mail_user, mail_pass)
         smtpObj.sendmail(sender, receivers, msgRoot.as_string())
-        print "邮件发送成功"
-    except smtplib.SMTPException, ex:
-        print "Error: 无法发送邮件"
+        print("邮件发送成功")
+    except smtplib.SMTPException:
+        print("Error: 无法发送邮件")
 
 
 def mail():
