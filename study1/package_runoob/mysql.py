@@ -69,7 +69,7 @@ def insert():
 
 
 def select():
-    conn = pymysql.connect(host='59.110.41.49', port=22822, user='root', passwd='Mengzhiwang&2017', db='db_brand',
+    conn = pymysql.connect(host='4324', port=22822, user='root', passwd='fdsf&2017', db='432',
                            charset='utf8')
     cursor = conn.cursor()
     sql = """select * from t_applicant20171212 where flag=0 """
