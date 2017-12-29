@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 # mysqldb模块 没有安装成功
 import pymysql
+import re
 
 
 def selectone():
@@ -67,4 +68,30 @@ def insert():
     conn.close()
 
 
-selectall()
+def select():
+    conn = pymysql.connect(host='59.110.41.49', port=22822, user='root', passwd='Mengzhiwang&2017', db='db_brand',
+                           charset='utf8')
+    cursor = conn.cursor()
+    sql = """select * from t_applicant20171212 where flag=0 """
+    cursor.execute(sql)
+    data = cursor.fetchall()
+    for row in data:
+        id = row[0]
+        name = row[1]
+        currname = rereplace(name)
+        if name != currname:
+            try:
+                cursor.execute("UPDATE t_applicant20171212 SET applicant_cn='" + currname + "' WHERE id=" + str(id))
+            except Exception:
+                continue
+    conn.commit()
+    conn.close()
+
+
+def rereplace(strr):
+    pattern = '[\x00-\xff]'
+    result, number = re.subn(pattern, '', strr)
+    return result.strip("（）")
+
+
+select()
